@@ -1,5 +1,15 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import "./globals.css";
+import { Manrope } from "next/font/google";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-manrope",
+});
 
 export default function RootLayout({
   children,
@@ -7,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={manrope.variable}>
+      <body className="bg-[#000010]">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
