@@ -2,7 +2,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import "./globals.css";
 import { Manrope } from "next/font/google";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/header";
 import Footer from "@/components/footer";
 
 const manrope = Manrope({
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body className="bg-[#000010]">
+      <body className="bg-[hsl(26,100%,1%)]">
         <Navbar />
         <main>{children}</main>
         <Footer />

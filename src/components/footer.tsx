@@ -10,28 +10,29 @@ import Link from "next/link";
 const Footer = async () => {
   const client = createClient();
   const settings = await client.getSingle("settings");
+
   return (
-    <footer className="w-full flex flex-col items-center justify-center px-12 lg:px-16 pb-[32px]">
-      <div className="w-full flex flex-col items-center justify-center gap-8 border-y-2 border-white/10 py-12">
+    <footer className="flex w-full flex-col items-center justify-center px-12 pb-[32px] lg:px-16">
+      <div className="flex w-full flex-col items-center justify-center gap-8 border-y-2 border-white/10 py-12">
         <Link href="/">
-          <div className="w-[54px] h-[54px] duration-300 transition-all bg-[#8f37f7]/40 hover:bg-[#8f37f7]/70 rounded-full flex items-center justify-center border-opacity-10">
+          <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/70">
             <Image
               src={logo}
               alt="logo"
               width={300}
               height={300}
-              className="w-6 h-6"
+              className="h-6 w-6"
             />
           </div>
           <span className="sr-only">Synthetix Home Page</span>
         </Link>
 
-        <nav className="text-white mt-[8px]">
+        <nav className="mt-[8px] text-white">
           <ul className="flex w-full">
             {settings.data.navigation.map((item) => (
               <li
                 key={item.label}
-                className="text-base leading-[23.04px] tracking-[-0.16px] opacity-50 hover:opacity-100 transition-opacity cursor-pointer text-center font-normal w-[123px]"
+                className="w-[123px] cursor-pointer text-center text-base font-normal leading-[23.04px] tracking-[-0.16px] opacity-50 transition-opacity hover:opacity-100"
               >
                 <PrismicNextLink field={item.link} className="text-center">
                   {item.label}
@@ -41,47 +42,49 @@ const Footer = async () => {
           </ul>
         </nav>
 
-        <div className="w-[164px] h-[48px] flex items-center justify-around">
+        <div className="flex h-[48px] w-[164px] items-center justify-around">
           <a
             href="https://www.linkedin.com/"
-            className="opacity-50 hover:opacity-100 transition-all"
+            className="opacity-50 transition-all hover:opacity-100"
           >
             <Image
               src={linkedIn}
               alt="logo"
               width={300}
               height={300}
-              className="max-w-6 min-h-6"
+              className="min-h-6 max-w-6"
             />
           </a>
           <a
             href="https://www.linkedin.com/"
-            className="opacity-50 hover:opacity-100 transition-all"
+            className="opacity-50 transition-all hover:opacity-100"
           >
             <Image
               src={twitter}
               alt="logo"
               width={300}
               height={300}
-              className="max-w-6 min-h-6"
+              className="min-h-6 max-w-6"
             />
           </a>
           <a
             href="https://www.linkedin.com/"
-            className="opacity-50 hover:opacity-100 transition-all"
+            className="opacity-50 transition-all hover:opacity-100"
           >
             <Image
               src={facebook}
               alt="logo"
               width={300}
               height={300}
-              className="max-w-6 min-h-6"
+              className="min-h-6 max-w-6"
             />
           </a>
         </div>
       </div>
 
-      <p className="text-xs leading-[17.28px] tracking-[0.72px] text-center opacity-50 text-white font-medium mt-[17px]">@2024, SYNTHETIX</p>
+      <p className="mt-[17px] text-center text-xs font-medium leading-[17.28px] tracking-[0.72px] text-white opacity-50">
+        @2024, SYNTHETIX
+      </p>
     </footer>
   );
 };
