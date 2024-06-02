@@ -52,6 +52,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "image2": {
+          "type": "Image",
+          "config": {
+            "label": "Image2",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

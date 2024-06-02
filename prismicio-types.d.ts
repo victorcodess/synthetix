@@ -232,6 +232,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image2 field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
 }
 
 /**

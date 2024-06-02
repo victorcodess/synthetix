@@ -19,12 +19,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex min-h-[100vh] items-center justify-center text-white p-4 px-6 min-[425px]:px-[42px] pt-[174px] md:pt-[255px] xl:py-[199px] md:px-12"
-      style={{
+      className="flex min-h-[100vh] items-center justify-center text-white p-4 px-6 min-[425px]:px-[42px] pt-[174px] md:pt-[255px] xl:py-[199px] md:px-12 relative overflow-hidden w-full"
+      
+    >
+      <div style={{
         background:
           "radial-gradient(43.3% 50% at 50% 50%,var(--token-f62537b2-225f-4612-b5a7-10d588628663, rgba(255, 109, 0, .35)) 0%,var(--token-c92ed155-c13c-498b-9920-b8553fdbf57c, rgb(5, 2, 0)) 100%)",
-      }}
-    >
+      }} className="absolute top-0 bottom-0 my-auto !mx-auto -left-[50%] md:-left-[0] right-0 w-[200%] md:w-full h-full opacity-90"></div>
+
       <div className="w-full min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[1090px] flex flex-col items-center justify-center gap-4 relative">
         <div className="text-gradient rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px] w-max mx-auto">
           AI DATA PROCESSING
@@ -55,7 +57,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
         <PrismicNextImage field={slice.primary.image} className="mt-20 w-80 md:w-96 md:mt-28 xl:absolute xl:-bottom-[180px] xl:-left-[100px] xl:mt-0 xl:w-72" />
 
-        <PrismicNextImage field={slice.primary.image} className="hidden xl:block xl:absolute xl:-bottom-[180px] xl:-right-[100px] xl:mt-0 xl:w-72" />
+        <PrismicNextImage field={slice.primary.image2} className="hidden xl:block xl:absolute xl:-bottom-[180px] xl:-right-[100px] xl:mt-0 xl:w-72" />
       </div>
     </section>
   );
