@@ -5,7 +5,7 @@ const Header = async () => {
   const settings = await client.getSingle("settings");
 
   return (
-    <header className="fixed left-0 right-0 top-10 mx-auto flex  w-full items-center justify-center">
+    <header className="fixed left-0 right-0 top-8 md:top-10 mx-auto flex z-50 w-full items-center justify-center">
       <Navbar settings={settings} />
     </header>
   );

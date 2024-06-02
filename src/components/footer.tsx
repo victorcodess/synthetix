@@ -12,7 +12,7 @@ const Footer = async () => {
   const settings = await client.getSingle("settings");
 
   return (
-    <footer className="flex w-full flex-col items-center justify-center px-12 pb-[32px] lg:px-16">
+    <footer className="flex w-full flex-col items-center justify-center px-12 pb-[32px] lg:px-16 overflow-hidden">
       <div className="flex w-full flex-col items-center justify-center gap-8 border-y-2 border-white/10 py-12">
         <Link href="/">
           <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/70">
@@ -28,7 +28,7 @@ const Footer = async () => {
         </Link>
 
         <nav className="mt-[8px] text-white">
-          <ul className="flex w-full">
+          <ul className="flex w-full flex-col gap-[17px] md:gap-0 md:flex-row">
             {settings.data.navigation.map((item) => (
               <li
                 key={item.label}
