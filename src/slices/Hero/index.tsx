@@ -32,7 +32,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div
         style={{
           background:
-            "radial-gradient(43.3% 50% at 50% 50%,var(--token-f62537b2-225f-4612-b5a7-10d588628663, rgba(255, 109, 0, .45)) 0%,var(--token-c92ed155-c13c-498b-9920-b8553fdbf57c, rgb(5, 2, 0)) 100%)",
+            "radial-gradient(43.3% 50% at 50% 50%,var(--token-f62537b2-225f-4612-b5a7-10d588628663, rgba(255, 109, 0, .35)) 0%,var(--token-c92ed155-c13c-498b-9920-b8553fdbf57c, rgba(16, 0, 0, 1)) 100%)",
         }}
         className="absolute -left-[50%] bottom-0 right-0 top-0 !mx-auto my-auto h-full w-[200%] opacity-100 sm:-left-[0] sm:w-full"
       ></div>

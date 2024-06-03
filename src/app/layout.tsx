@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={manrope.className}>
-      <body className="bg-[#050200]">
+      <body className="bg-[#100000]">
         <Header />
         <main className="text-white">{children}</main>
         <Footer />
