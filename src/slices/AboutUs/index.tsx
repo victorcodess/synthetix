@@ -17,7 +17,9 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-6 pb-[56px] pt-[112px] text-white min-[425px]:px-[42px] md:px-12 md:pt-[144px]"
     >
-      <div className="flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px]">
+      <div className="flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px] relative">
+        <div className="w-[240px] h-[240px] absolute bg-[#ff6d00]/[0.25] top-2.5 -z-10 rounded-[120px] blur-[50px]"/>
+        
         <div className="text-gradient mx-auto w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]">
           ABOUT US
         </div>
