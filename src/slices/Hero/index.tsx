@@ -79,7 +79,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <h4 className="text-[12px] font-medium leading-[17.28px] tracking-[0.72px] text-white text-center w-[240px] sm:w-full">
             BUSINESSES RELY ON US FOR CONSUMER ENGAGEMENT
           </h4>
-          <div className="flex items-center justify-center flex-wrap w-full gap-9 md:gap-0">
+          <div className="flex items-center justify-center flex-wrap md:flex-nowrap w-full gap-9 md:gap-0 -mr-20">
             <Image
               src={logoipsum}
               alt=""
