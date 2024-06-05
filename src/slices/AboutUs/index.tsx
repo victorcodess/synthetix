@@ -15,7 +15,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-[21px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px]"
+     className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-[21px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px]"
     >
       <div className="flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px] relative">
         <div className="w-[240px] h-[240px] absolute bg-[#ff6d00]/[0.25] top-2.5 -z-10 rounded-[120px] blur-[50px]"/>
@@ -57,7 +57,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
             <h3 className="mt-8 text-[24px] leading-[25.92px]">
               <PrismicRichText field={item.heading} />
             </h3>
-            <p className="trackinh-[-0.16px] mt-3 text-[16px] leading-[23.04px] opacity-50">
+            <p className="tracking-[-0.16px] mt-3 text-[16px] leading-[23.04px] opacity-50">
               <PrismicRichText field={item.body} />
             </p>
           </div>

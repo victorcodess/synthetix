@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | IndustriesSlice
   | ServicesSlice
   | AboutUsSlice
   | HeroSlice
@@ -376,6 +377,106 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Industries → Primary*
+ */
+export interface IndustriesSliceDefaultPrimary {
+  /**
+   * Heading field in *Industries → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Industries → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Contact field in *Industries → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.primary.contact
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  contact: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Industries → Items*
+ */
+export interface IndustriesSliceDefaultItem {
+  /**
+   * Image field in *Industries → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Industries → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Industries → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industries.items[].body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Industries Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndustriesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IndustriesSliceDefaultPrimary>,
+  Simplify<IndustriesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Industries*
+ */
+type IndustriesSliceVariation = IndustriesSliceDefault;
+
+/**
+ * Industries Shared Slice
+ *
+ * - **API ID**: `industries`
+ * - **Description**: Industries
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndustriesSlice = prismic.SharedSlice<
+  "industries",
+  IndustriesSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -526,6 +627,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IndustriesSlice,
+      IndustriesSliceDefaultPrimary,
+      IndustriesSliceDefaultItem,
+      IndustriesSliceVariation,
+      IndustriesSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
