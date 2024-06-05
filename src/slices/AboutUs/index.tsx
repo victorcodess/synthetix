@@ -15,11 +15,11 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-6 pb-[56px] pt-[112px] text-white min-[425px]:px-[42px] md:px-12 md:pt-[144px]"
+      className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-[21px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px]"
     >
       <div className="flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px] relative">
         <div className="w-[240px] h-[240px] absolute bg-[#ff6d00]/[0.25] top-2.5 -z-10 rounded-[120px] blur-[50px]"/>
-        
+
         <div className="text-gradient mx-auto w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]">
           ABOUT US
         </div>
@@ -40,7 +40,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
         </PrismicNextLink>
       </div>
 
-      <div className="relative mt-20 flex w-full flex-col md:flex-row gap-12 md:gap-0 items-start justify-center py-16 md:py-20 md:items-center">
+      <div className="relative mt-20 flex w-full flex-col sm:flex-row gap-12 sm:gap-4 items-start justify-center py-16 sm:py-20 sm:items-center">
         <div
           style={{
             background:
@@ -51,7 +51,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
         {slice.items.map((item) => (
           <div
             key={asText(item.heading)}
-            className="flex w-full flex-col md:w-1/3 md:pr-6"
+            className="flex w-full flex-col sm:w-1/3 sm:pr-6"
           >
             <PrismicNextImage field={item.icon} className="w-10" />
             <h3 className="mt-8 text-[24px] leading-[25.92px]">
