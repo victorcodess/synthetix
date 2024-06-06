@@ -8,4 +8,5 @@ export const components = {
   industries: dynamic(() => import("./Industries")),
   rich_text: dynamic(() => import("./RichText")),
   services: dynamic(() => import("./Services")),
+  testimonials: dynamic(() => import("./Testimonials")),
 };
