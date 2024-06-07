@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | ContactUsSlice
   | TestimonialsSlice
   | IndustriesSlice
   | ServicesSlice
@@ -283,6 +284,116 @@ type AboutUsSliceVariation = AboutUsSliceDefault;
 export type AboutUsSlice = prismic.SharedSlice<
   "about_us",
   AboutUsSliceVariation
+>;
+
+/**
+ * Primary content in *ContactUs → Primary*
+ */
+export interface ContactUsSliceDefaultPrimary {
+  /**
+   * Heading field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Tag field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tag: prismic.RichTextField;
+
+  /**
+   * CTA field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cta: prismic.RichTextField;
+
+  /**
+   * Body field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Image field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ContactUs → Items*
+ */
+export interface ContactUsSliceDefaultItem {
+  /**
+   * Detail field in *ContactUs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.items[].detail
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  detail: prismic.RichTextField;
+
+  /**
+   * Value field in *ContactUs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.items[].value
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  value: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContactUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactUsSliceDefaultPrimary>,
+  Simplify<ContactUsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ContactUs*
+ */
+type ContactUsSliceVariation = ContactUsSliceDefault;
+
+/**
+ * ContactUs Shared Slice
+ *
+ * - **API ID**: `contact_us`
+ * - **Description**: ContactUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsSlice = prismic.SharedSlice<
+  "contact_us",
+  ContactUsSliceVariation
 >;
 
 /**
@@ -724,6 +835,11 @@ declare module "@prismicio/client" {
       AboutUsSliceDefaultItem,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      ContactUsSlice,
+      ContactUsSliceDefaultPrimary,
+      ContactUsSliceDefaultItem,
+      ContactUsSliceVariation,
+      ContactUsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
