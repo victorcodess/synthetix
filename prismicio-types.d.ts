@@ -214,12 +214,12 @@ export interface AboutUsSliceDefaultPrimary {
   /**
    * Services field in *AboutUs → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_us.primary.services
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  services: prismic.LinkField;
+  services: prismic.RichTextField;
 }
 
 /**
@@ -304,22 +304,22 @@ export interface CallToActionSliceDefaultPrimary {
   /**
    * Contact field in *CallToAction → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: call_to_action.primary.contact
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  contact: prismic.LinkField;
+  contact: prismic.RichTextField;
 
   /**
    * About field in *CallToAction → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: call_to_action.primary.about
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  about: prismic.LinkField;
+  about: prismic.RichTextField;
 
   /**
    * ImageLeft field in *CallToAction → Primary*
@@ -517,24 +517,24 @@ export interface HeroSliceDefaultPrimary {
   body: prismic.RichTextField;
 
   /**
-   * Button Link field in *Hero → Primary*
+   * Contact Button field in *Hero → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: hero.primary.contact_button
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  button_link: prismic.LinkField;
+  contact_button: prismic.RichTextField;
 
   /**
-   * Button Label field in *Hero → Primary*
+   * Services Button field in *Hero → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: hero.primary.services_button
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  button_label: prismic.KeyTextField;
+  services_button: prismic.RichTextField;
 
   /**
    * Image field in *Hero → Primary*
@@ -611,12 +611,12 @@ export interface IndustriesSliceDefaultPrimary {
   /**
    * Contact field in *Industries → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: industries.primary.contact
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  contact: prismic.LinkField;
+  contact: prismic.RichTextField;
 }
 
 /**

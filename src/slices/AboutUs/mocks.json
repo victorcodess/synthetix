@@ -30,17 +30,15 @@
 				]
 			},
 			"services": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ImageLink",
-					"id": "-QOUBSKHvAM",
-					"name": "orange fruits on blue ceramic bowl",
-					"kind": "image",
-					"url": "https://images.unsplash.com/photo-1613260976142-3e9700b7a6a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE3MzczNzA0fDA&ixlib=rb-4.0.3&q=85",
-					"size": "0",
-					"height": "3594",
-					"width": "4960"
-				}
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem veniam minim exercitation officia aliquip eu non aliqua ipsum nulla deserunt nulla. Irure adipisicing fugiat elit id proident laboris enim excepteur occaecat laborum sint in elit amet."
+						}
+					}
+				]
 			}
 		},
 		"items": [

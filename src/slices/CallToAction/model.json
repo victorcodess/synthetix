@@ -22,19 +22,21 @@
           }
         },
         "contact": {
-          "type": "Link",
+          "type": "StructuredText",
           "config": {
             "label": "Contact",
             "placeholder": "",
-            "select": null
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
           }
         },
         "about": {
-          "type": "Link",
+          "type": "StructuredText",
           "config": {
             "label": "About",
             "placeholder": "",
-            "select": null
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
           }
         },
         "imageleft": {

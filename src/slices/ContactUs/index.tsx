@@ -16,6 +16,7 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="contact-us"
       className="relative flex w-full flex-col items-start justify-start overflow-hidden px-[24px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-16"
     >
       <div className="absolute top-[70px] sm:top-[90px] -z-10 h-[180px] sm:h-[240px] w-[180px] sm:w-[240px] rounded-[120px] bg-[#ff6d00]/[0.25] blur-[50px] md:top-[112px]" />

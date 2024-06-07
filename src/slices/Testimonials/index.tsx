@@ -18,6 +18,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="testimonials"
       className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-[21px] pb-[48px] pt-[112px] text-white md:px-12 md:pb-[56px] md:pt-[144px] xl:px-[64px]"
     >
       <div className="relative flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px]">

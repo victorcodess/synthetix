@@ -31,11 +31,12 @@
           }
         },
         "contact": {
-          "type": "Link",
+          "type": "StructuredText",
           "config": {
             "label": "Contact",
             "placeholder": "",
-            "select": null
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
           }
         }
       },

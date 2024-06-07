@@ -3,6 +3,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { useState } from "react";
 import IndustryItems from "./industry-items";
+import Linker from "@/components/linker";
 
 /**
  * Props for `Industries`.
@@ -17,6 +18,7 @@ const Industries = ({ slice }: IndustriesProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="industries"
       className="relative flex w-full flex-col items-center justify-start overflow-hidden p-4 px-[21px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-[64px]"
     >
       <div className="relative flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[648px]">
@@ -34,12 +36,10 @@ const Industries = ({ slice }: IndustriesProps): JSX.Element => {
           <PrismicRichText field={slice.primary.body} />
         </p>
 
-        <PrismicNextLink
+        <Linker
           className="mt-2 inline-flex w-max justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] px-7 py-4 text-base font-medium leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60"
           field={slice.primary.contact}
-        >
-          Contact Us
-        </PrismicNextLink>
+        />
       </div>
 
       {/* @ts-ignore */}

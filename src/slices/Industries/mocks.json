@@ -26,11 +26,15 @@
 				]
 			},
 			"contact": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
-				}
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat occaecat est quis consequat."
+						}
+					}
+				]
 			}
 		},
 		"items": [

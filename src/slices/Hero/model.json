@@ -30,19 +30,22 @@
             "single": "paragraph"
           }
         },
-        "button_link": {
-          "type": "Link",
+        "contact_button": {
+          "type": "StructuredText",
           "config": {
-            "label": "Button Link",
+            "label": "Contact Button",
             "placeholder": "",
-            "select": null
+            "allowTargetBlank": true,
+            "multi": "hyperlink,paragraph"
           }
         },
-        "button_label": {
-          "type": "Text",
+        "services_button": {
+          "type": "StructuredText",
           "config": {
-            "label": "Button Label",
-            "placeholder": ""
+            "label": "Services Button",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
           }
         },
         "image": {

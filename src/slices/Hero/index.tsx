@@ -13,6 +13,8 @@ import ipsum3 from "../../public/ipsum3.png";
 import ipsum4 from "../../public/ipsum4.png";
 import ipsum5 from "../../public/ipsum5.png";
 import Image from "next/image";
+import Linker from "@/components/linker";
+import Link from "next/link";
 
 /**
  * Props for `Hero`.
@@ -27,6 +29,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="hero"
       className="relative flex min-h-[100vh] w-full items-center justify-center overflow-hidden p-4 px-6 pt-[174px] text-white min-[425px]:px-[42px] md:px-12 md:pt-[255px] xl:pb-[56px] xl:pt-[199px]"
     >
       <div
@@ -51,35 +54,31 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </p>
 
         <div className="mt-4 flex w-full flex-col items-center justify-center gap-2 md:flex-row">
-          <PrismicNextLink
+          <Linker
+            field={slice.primary.contact_button}
             className="inline-flex w-full justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60 md:w-max"
-            field={slice.primary.button_link}
-          >
-            Contact Us
-          </PrismicNextLink>
-          <PrismicNextLink
+          />
+          <Linker
+            field={slice.primary.services_button}
             className="inline-flex w-full justify-center rounded-full bg-gradient-to-b from-white/[5%] to-white/[15%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:!bg-[#fff]/[12%] md:w-max"
-            field={slice.primary.button_link}
-          >
-            Our Services
-          </PrismicNextLink>
+          />
         </div>
 
         <PrismicNextImage
           field={slice.primary.image}
-          className="mt-20 w-80 md:mt-28 md:w-96 xl:absolute xl:bottom-[216px] xl:-left-[100px] xl:mt-0 xl:w-72"
+          className="mt-20 w-80 md:mt-28 md:w-96 xl:absolute xl:-left-[100px] xl:bottom-[216px] xl:mt-0 xl:w-72"
         />
 
         <PrismicNextImage
           field={slice.primary.image2}
-          className="hidden xl:absolute xl:bottom-[216px] xl:-right-[100px] xl:mt-0 xl:block xl:w-72"
+          className="hidden xl:absolute xl:-right-[100px] xl:bottom-[216px] xl:mt-0 xl:block xl:w-72"
         />
 
-        <div className="mt-[120px] md:mt-[243px] flex w-full flex-col items-center justify-center gap-8 mb-12 md:mb-[56px]">
-          <h4 className="text-[12px] font-medium leading-[17.28px] tracking-[0.72px] text-white text-center w-[240px] sm:w-full">
+        <div className="mb-12 mt-[120px] flex w-full flex-col items-center justify-center gap-8 md:mb-[56px] md:mt-[243px]">
+          <h4 className="w-[240px] text-center text-[12px] font-medium leading-[17.28px] tracking-[0.72px] text-white sm:w-full">
             BUSINESSES RELY ON US FOR CONSUMER ENGAGEMENT
           </h4>
-          <div className="flex items-center justify-center flex-wrap md:flex-nowrap w-full gap-9 md:gap-0 -mr-20">
+          <div className="-mr-20 flex w-full flex-wrap items-center justify-center gap-9 md:flex-nowrap md:gap-0">
             <Image
               src={logoipsum}
               alt=""
@@ -113,7 +112,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <Image
               src={ipsum5}
               alt=""
-              className="hidden md:block mr-[20px] w-[81px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="mr-[20px] hidden w-[81px] cursor-pointer opacity-50 transition-all hover:opacity-100 md:block"
             />
           </div>
         </div>

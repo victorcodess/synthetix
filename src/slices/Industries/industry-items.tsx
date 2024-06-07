@@ -19,7 +19,6 @@ const IndustryItems = ({ slice}: IndustriesProps): JSX.Element => {
     Simplify<Content.IndustriesSliceDefaultItem>
   >(slice.items[0]);
 
-  console.log(slice.items, industry.image.url);
 
   const handleClick = (item: Simplify<Content.IndustriesSliceDefaultItem>) => {
     setIndustry(item);
