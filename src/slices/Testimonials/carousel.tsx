@@ -52,7 +52,7 @@ const Carousel = ({ slice }: TestimonialsProps): JSX.Element => {
             <h4 className="mt-12 text-base leading-[23.04px] tracking-[-0.16px]">
               <PrismicRichText field={item.contact} />
             </h4>
-            <p className="text-base leading-[23.04px] tracking-[-0.16px] opacity-50">
+            <p className="text-base leading-[23.04px] tracking-[-0.16px] opacity-50 text-center ">
               <PrismicRichText field={item.role} />
             </p>
           </SwiperSlide>

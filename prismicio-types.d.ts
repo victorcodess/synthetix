@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
   | ContactUsSlice
   | TestimonialsSlice
   | IndustriesSlice
@@ -284,6 +285,101 @@ type AboutUsSliceVariation = AboutUsSliceDefault;
 export type AboutUsSlice = prismic.SharedSlice<
   "about_us",
   AboutUsSliceVariation
+>;
+
+/**
+ * Primary content in *CallToAction → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Heading field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Contact field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.contact
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  contact: prismic.LinkField;
+
+  /**
+   * About field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.about
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  about: prismic.LinkField;
+
+  /**
+   * ImageLeft field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageCenter field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.imagecenter
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagecenter: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageright: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
 >;
 
 /**
@@ -835,6 +931,10 @@ declare module "@prismicio/client" {
       AboutUsSliceDefaultItem,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       ContactUsSlice,
       ContactUsSliceDefaultPrimary,
       ContactUsSliceDefaultItem,
