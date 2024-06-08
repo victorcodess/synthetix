@@ -14,7 +14,6 @@ import ipsum4 from "../../public/ipsum4.png";
 import ipsum5 from "../../public/ipsum5.png";
 import Image from "next/image";
 import Linker from "@/components/linker";
-import Link from "next/link";
 
 /**
  * Props for `Hero`.

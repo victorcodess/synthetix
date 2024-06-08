@@ -56,7 +56,7 @@ const Footer = async () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.twitter.com/"
             className="opacity-50 transition-all hover:opacity-100"
           >
             <Image
@@ -68,7 +68,7 @@ const Footer = async () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.facebook.com/"
             className="opacity-50 transition-all hover:opacity-100"
           >
             <Image
