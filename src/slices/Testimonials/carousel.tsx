@@ -9,6 +9,7 @@ import Image from "next/image";
 import prev from "../../public/prev.png";
 import next from "../../public/next.png";
 import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 /**
  * Props for `Industries`.
@@ -21,9 +22,17 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
 const Carousel = ({ slice }: TestimonialsProps): JSX.Element => {
   const reviewSwiperRef = useRef<any>();
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
-    <div className="relative w-full">
+    <motion.div ref={targetRef} style={{ opacity, scale }} className="relative w-full">
       <Swiper
         slidesPerView={1}
         centeredSlides={false}
@@ -52,7 +61,7 @@ const Carousel = ({ slice }: TestimonialsProps): JSX.Element => {
             <h4 className="mt-12 text-base leading-[23.04px] tracking-[-0.16px]">
               <PrismicRichText field={item.contact} />
             </h4>
-            <p className="text-base leading-[23.04px] tracking-[-0.16px] opacity-50 text-center ">
+            <p className="text-center text-base leading-[23.04px] tracking-[-0.16px] opacity-50 ">
               <PrismicRichText field={item.role} />
             </p>
           </SwiperSlide>
@@ -73,7 +82,7 @@ const Carousel = ({ slice }: TestimonialsProps): JSX.Element => {
           onClick={() => reviewSwiperRef.current.slideNext()}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

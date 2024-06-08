@@ -4,7 +4,6 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { useState } from "react";
 import IndustryItems from "./industry-items";
 import Linker from "@/components/linker";
-
 /**
  * Props for `Industries`.
  */

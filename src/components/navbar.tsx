@@ -24,6 +24,7 @@ const Navbar = ({ settings }: NavbarProps) => {
         opacity: 1,
         transition: {
           duration: 1,
+          delay: 1,
           ease: [0.44, 0, 0, 1],
         },
       }}

@@ -1,7 +1,8 @@
+"use client";
 import { Content, asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-
+import { motion } from "framer-motion";
 /**
  * Props for `Services`.
  */
@@ -30,7 +31,23 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
 
       <div className="mt-[61px] grid w-full grid-cols-1 grid-rows-6 place-content-center place-items-center gap-x-[16px] gap-y-[52px] md:mt-[72px] md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2">
         {slice.items.map((item) => (
-          <div key={asText(item.heading)} className="flex w-full flex-col">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: {
+                duration: 1,
+                ease: [0.44, 0, 0, 1],
+              },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
+            key={asText(item.heading)}
+            className="flex w-full flex-col"
+          >
             <PrismicNextImage
               field={item.image}
               className="aspect-square w-full rounded-2xl object-cover outline outline-2 -outline-offset-[2px] outline-white/[15%]"
@@ -41,7 +58,7 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
             <p className="mt-3 text-base leading-[23.04px] tracking-[-0.16px] opacity-50 md:pr-6">
               <PrismicRichText field={item.body} />
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -1,3 +1,4 @@
+"use client";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import {
@@ -14,6 +15,7 @@ import ipsum4 from "../../public/ipsum4.png";
 import ipsum5 from "../../public/ipsum5.png";
 import Image from "next/image";
 import Linker from "@/components/linker";
+import { motion } from "framer-motion";
 
 /**
  * Props for `Hero`.
@@ -40,38 +42,126 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       ></div>
 
       <div className="relative flex w-full flex-col items-center justify-center gap-4 min-[425px]:w-[400px] md:w-full lg:w-[760px] xl:w-[1090px]">
-        <div className="text-gradient mx-auto w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]">
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="text-gradient mx-auto w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]"
+        >
           AI DATA PROCESSING
-        </div>
+        </motion.div>
 
-        <h1 className="text-balance text-center text-[40px] leading-[43.2px] tracking-[-2px] md:text-[60px] md:leading-[64.8px] xl:text-[80px] xl:leading-[86.4px]">
+        <motion.h1
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="text-balance text-center text-[40px] leading-[43.2px] tracking-[-2px] md:text-[60px] md:leading-[64.8px] xl:text-[80px] xl:leading-[86.4px]"
+        >
           <PrismicText field={slice.primary.heading} />
-        </h1>
+        </motion.h1>
 
-        <p className="w-full pt-[12px] text-center text-[21px] leading-[30.24px] tracking-[-0.21px] md:w-[584px]">
+        <motion.p
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="w-full pt-[12px] text-center text-[21px] leading-[30.24px] tracking-[-0.21px] md:w-[584px]"
+        >
           <PrismicText field={slice.primary.body} />
-        </p>
+        </motion.p>
 
-        <div className="mt-4 flex w-full flex-col items-center justify-center gap-2 md:flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="mt-4 flex w-full flex-col items-center justify-center gap-2 md:flex-row"
+        >
           <Linker
             field={slice.primary.contact_button}
-            className="inline-flex w-full justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60 md:w-max"
+            className="transition-some inline-flex w-full justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] duration-300 hover:bg-[#ff6d00]/60 md:w-max"
           />
           <Linker
             field={slice.primary.services_button}
-            className="inline-flex w-full justify-center rounded-full bg-gradient-to-b from-white/[5%] to-white/[15%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:!bg-[#fff]/[12%] md:w-max"
+            className="transition-some inline-flex w-full justify-center rounded-full bg-gradient-to-b from-white/[5%] to-white/[15%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] duration-300 hover:!bg-[#fff]/[12%] md:w-max"
           />
-        </div>
+        </motion.div>
 
-        <PrismicNextImage
-          field={slice.primary.image}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 1.2,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
           className="mt-20 w-80 md:mt-28 md:w-96 xl:absolute xl:-left-[100px] xl:bottom-[216px] xl:mt-0 xl:w-72"
-        />
+        >
+          <PrismicNextImage field={slice.primary.image} className="xl:w-72" />
+        </motion.div>
 
-        <PrismicNextImage
-          field={slice.primary.image2}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 1.2,
+              ease: [0.44, 0, 0, 1],
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
           className="hidden xl:absolute xl:-right-[100px] xl:bottom-[216px] xl:mt-0 xl:block xl:w-72"
-        />
+        >
+          <PrismicNextImage field={slice.primary.image2} className="xl:w-72" />
+        </motion.div>
 
         <div className="mb-12 mt-[120px] flex w-full flex-col items-center justify-center gap-8 md:mb-[56px] md:mt-[243px]">
           <h4 className="w-[240px] text-center text-[12px] font-medium leading-[17.28px] tracking-[0.72px] text-white sm:w-full">
@@ -81,37 +171,37 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <Image
               src={logoipsum}
               alt=""
-              className="mr-[42px] w-[117px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[42px] w-[117px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={logoo}
               alt=""
-              className="mr-[47px] w-[60px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[47px] w-[60px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={ipsum}
               alt=""
-              className="mr-[35px] w-[107px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[35px] w-[107px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={ipsum2}
               alt=""
-              className="mr-[56px] w-[84px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[56px] w-[84px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={ipsum3}
               alt=""
-              className="mr-[45px] w-[64px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[45px] w-[64px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={ipsum4}
               alt=""
-              className="mr-[38px] w-[106px] cursor-pointer opacity-50 transition-all hover:opacity-100"
+              className="transition-some mr-[38px] w-[106px] cursor-pointer opacity-50 hover:opacity-100"
             />
             <Image
               src={ipsum5}
               alt=""
-              className="mr-[20px] hidden w-[81px] cursor-pointer opacity-50 transition-all hover:opacity-100 md:block"
+              className="transition-some mr-[20px] hidden w-[81px] cursor-pointer opacity-50 hover:opacity-100 md:block"
             />
           </div>
         </div>
