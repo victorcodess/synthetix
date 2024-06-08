@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { PrismicNextLink } from "@prismicio/next";
 import Linker from "./linker";
+import { AnimatePresence, motion } from "framer-motion";
 
 type NavbarProps = {
   settings: Content.SettingsDocument;
@@ -17,7 +18,21 @@ type NavbarProps = {
 const Navbar = ({ settings }: NavbarProps) => {
   const [openNav, setOpenNav] = useState(false);
   return (
-    <nav className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16">
+    <motion.nav
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          duration: 1,
+          ease: [0.44, 0, 0, 1],
+        },
+      }}
+      viewport={{
+        amount: "all",
+        once: true,
+      }}
+      className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16"
+    >
       {openNav && (
         <div className="fixed right-0 top-0 flex h-[100vh] w-full flex-col items-center justify-start bg-[#100000]">
           <div
@@ -28,11 +43,26 @@ const Navbar = ({ settings }: NavbarProps) => {
             className="absolute -left-[50%] right-0 top-0 -z-10 !mx-auto h-[800px] w-[200%] opacity-100 sm:-left-[0] sm:w-full"
           ></div>
 
-          <div className="mt-[120px] md:mt-[95px] flex h-[517px] md:h-[567px] w-full flex-col items-center justify-center gap-8 md:gap-9 py-[88px] md:!py-[64px]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 1,
+                ease: [0.44, 0, 0, 1],
+              },
+            }}
+            viewport={{
+              amount: "all",
+              once: true,
+            }}
+            className="mt-[120px] flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] md:mt-[95px] md:h-[567px] md:gap-9 md:!py-[64px]"
+          >
             {settings.data.navigation.map((item) => (
               <h4
                 key={item.label}
-                className="text-[28px] leading-[30.24px] md:text-[40px] md:leading-[43.2px] tracking-[-0.8px] text-white opacity-50 transition-all hover:opacity-100"
+                className="text-[28px] leading-[30.24px] tracking-[-0.8px] text-white opacity-50 transition-all hover:opacity-100 md:text-[40px] md:leading-[43.2px]"
                 onClick={() => setOpenNav(false)}
               >
                 <PrismicNextLink field={item.link} className="text-center">
@@ -40,9 +70,25 @@ const Navbar = ({ settings }: NavbarProps) => {
                 </PrismicNextLink>
               </h4>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="absolute bottom-[42px] md:bottom-[45px] left-0 right-0 mx-auto flex h-[20px] w-max gap-[30px] md:gap-[34px] items-center justify-around">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 1.2,
+                delay: 0.1,
+                ease: [0.44, 0, 0, 1],
+              },
+            }}
+            viewport={{
+              amount: "all",
+              once: true,
+            }}
+            className="absolute bottom-[42px] left-0 right-0 mx-auto flex h-[20px] w-max items-center justify-around gap-[30px] md:bottom-[45px] md:gap-[34px]"
+          >
             <a
               href="https://www.linkedin.com/"
               className="opacity-50 transition-all hover:opacity-100"
@@ -79,7 +125,7 @@ const Navbar = ({ settings }: NavbarProps) => {
                 className="min-h-5 max-w-5 md:min-h-6 md:max-w-6"
               />
             </a>
-          </div>
+          </motion.div>
         </div>
       )}
 
@@ -129,7 +175,7 @@ const Navbar = ({ settings }: NavbarProps) => {
         </div>
         <span className="sr-only">Synthetix Home Page</span>
       </a>
-    </nav>
+    </motion.nav>
   );
 };
 
