@@ -37,7 +37,6 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
         </p>
       </div>
 
-      {/* @ts-ignore */}
       <Carousel slice={slice} />
     </section>
   );

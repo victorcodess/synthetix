@@ -11,16 +11,12 @@ import next from "../../public/next.png";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-/**
- * Props for `Industries`.
- */
-export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
-/**
- * Component for "Industries" Slices.
- */
-
-const Carousel = ({ slice }: TestimonialsProps): JSX.Element => {
+const Carousel = ({
+  slice,
+}: {
+  slice: Content.TestimonialsSlice;
+}): JSX.Element => {
   const reviewSwiperRef = useRef<any>();
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({

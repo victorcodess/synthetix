@@ -5,16 +5,12 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { useState } from "react";
 import { Simplify } from "../../../prismicio-types";
 import { motion } from "framer-motion";
-/**
- * Props for `Industries`.
- */
-export type IndustriesProps = SliceComponentProps<Content.IndustriesSlice>;
 
-/**
- * Component for "Industries" Slices.
- */
-
-const IndustryItems = ({ slice }: IndustriesProps): JSX.Element => {
+const IndustryItems = ({
+  slice,
+}: {
+  slice: Content.IndustriesSlice;
+}): JSX.Element => {
   const [industry, setIndustry] = useState<
     Simplify<Content.IndustriesSliceDefaultItem>
   >(slice.items[0]);

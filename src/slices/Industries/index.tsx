@@ -41,7 +41,6 @@ const Industries = ({ slice }: IndustriesProps): JSX.Element => {
         />
       </div>
 
-      {/* @ts-ignore */}
       <IndustryItems slice={slice} />
     </section>
   );
