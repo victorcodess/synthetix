@@ -10,16 +10,18 @@ type LinkerProps = {
   field: any;
 };
 
+export const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  e.preventDefault();
+  const href = e.currentTarget.href;
+  const targetId = href.replace(/.*#/, "");
+  const elem = document.getElementById(targetId);
+  elem?.scrollIntoView({
+    behavior: "smooth",
+  });
+};
+
 const Linker = ({ className, field }: LinkerProps) => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*#/, "");
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+ 
 
   const convertToHash = (input: string | null): string => {
     if (typeof input !== "string") {

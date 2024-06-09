@@ -1,26 +1,23 @@
 "use client";
-import Linker from "@/components/linker";
-import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import Hero from "@/slices/Hero";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
-/**
- * Props for `CallToAction`.
- */
-export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
-
-/**
- * Component for "CallToAction" Slices.
- */
-const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
+const NotFound = () => {
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
       id="call-to-action"
-      className="relative flex w-full flex-col items-center justify-start overflow-hidden px-[24px] pb-[64px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-16"
+      className="relative flex min-h-[100vh] w-full flex-col items-center justify-start overflow-hidden px-[24px] pb-[64px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-16"
     >
+      <div
+        style={{
+          background:
+            "radial-gradient(43.3% 50% at 50% 50%,var(--token-f62537b2-225f-4612-b5a7-10d588628663, rgba(255, 109, 0, .35)) 0%,var(--token-c92ed155-c13c-498b-9920-b8553fdbf57c, rgba(16, 0, 0, 1)) 100%)",
+        }}
+        className="absolute -z-50 -left-[50%] right-0 top-0 !mx-auto h-[800px] w-[200%] opacity-100 sm:-left-[0] sm:w-full"
+      ></div>
+
       <motion.div
         initial={{ opacity: 0, y: 70 }}
         whileInView={{
@@ -35,21 +32,12 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           amount: "some",
           once: true,
         }}
-        className="w-full sm:w-[400px] md:w-full xl:w-[1090px]"
+        className="w-full sm:w-[400px] md:w-full xl:w-[1090px] flex flex-col items-center justify-center"
       >
-        <PrismicRichText
-          field={slice.primary.heading}
-          components={{
-            heading2: ({ children }) => (
-              <h2 className="text-center text-[40px] leading-[43.2px] tracking-[-2px] md:text-[64px] md:leading-[69.12px] xl:text-[80px] xl:leading-[86.4px]">
-                {children}
-              </h2>
-            ),
-            em: ({ children }) => (
-              <em className="pr-1 !not-italic text-[#ff6d00]">{children}</em>
-            ),
-          }}
-        />
+        <h2 className="text-center text-[40px] leading-[43.2px] tracking-[-2px] md:text-[64px] md:leading-[69.12px] xl:text-[80px] xl:leading-[86.4px]">
+          404
+        </h2>
+        <p>Page Not Found</p>
       </motion.div>
 
       <motion.div
@@ -68,18 +56,15 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         }}
         className="mt-8 flex w-min items-center gap-2"
       >
-        <Linker
+        <Link
+          href={"/"}
           className="mt-2 inline-flex w-max justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] px-7 py-4 text-base font-medium leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60"
-          field={slice.primary.contact}
-        />
-
-        <Linker
-          className="mt-2 inline-flex w-max justify-center rounded-full bg-gradient-to-b from-[#fff]/10 to-[#fff]/[50%] px-7 py-4 text-base font-medium leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#fff]/60"
-          field={slice.primary.about}
-        />
+        >
+          Back to Home
+        </Link>
       </motion.div>
 
-      <div className="relative -z-10 mt-4 flex w-full items-center justify-center gap-[71.33px] xl:items-start xl:!-mt-16">
+      <div className="relative -z-10 mt-4 flex w-full items-center justify-center gap-[71.33px] xl:!-mt-16 xl:items-start">
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           whileInView={{
@@ -95,8 +80,13 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
             once: true,
           }}
         >
-          <PrismicNextImage
-            field={slice.primary.imageleft}
+          <Image
+            src={
+              "https://images.prismic.io/synthetix/ZmWiqZm069VX1k2p_3d-element-twelve.png?auto=compress%2Cformat&w=800&h=800&fit=max"
+            }
+            alt=""
+            width={460}
+            height={448}
             className="w-full p-16 md:px-52 xl:!w-[320px] xl:!p-[45px]"
           />
         </motion.div>
@@ -117,8 +107,13 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           }}
           className="hidden xl:block"
         >
-          <PrismicNextImage
-            field={slice.primary.imagecenter}
+          <Image
+            src={
+              "https://images.prismic.io/synthetix/ZmWiqJm069VX1k2o_3d-element-thirteen.png?auto=compress%2Cformat&w=800&h=800&fit=max"
+            }
+            alt=""
+            width={460}
+            height={448}
             className="hidden p-[70px] xl:mt-20 xl:block xl:min-w-[320px]"
           />
         </motion.div>
@@ -139,8 +134,13 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           }}
           className="hidden xl:block"
         >
-          <PrismicNextImage
-            field={slice.primary.imageright}
+          <Image
+            src={
+              "https://images.prismic.io/synthetix/ZmWiqZm069VX1k2p_3d-element-twelve.png?auto=compress%2Cformat&w=800&h=800&fit=max"
+            }
+            alt=""
+            width={460}
+            height={448}
             className="hidden xl:block xl:w-[320px] xl:p-[45px]"
           />
         </motion.div>
@@ -149,4 +149,4 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   );
 };
 
-export default CallToAction;
+export default NotFound;

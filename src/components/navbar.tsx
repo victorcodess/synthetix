@@ -8,7 +8,7 @@ import { Content } from "@prismicio/client";
 import Link from "next/link";
 import { useState } from "react";
 import { PrismicNextLink } from "@prismicio/next";
-import Linker from "./linker";
+import Linker, { handleScroll } from "./linker";
 import { AnimatePresence, motion } from "framer-motion";
 
 type NavbarProps = {
@@ -66,7 +66,7 @@ const Navbar = ({ settings }: NavbarProps) => {
                 className="text-[28px] leading-[30.24px] tracking-[-0.8px] text-white opacity-50 transition-all hover:opacity-100 md:text-[40px] md:leading-[43.2px]"
                 onClick={() => setOpenNav(false)}
               >
-                <PrismicNextLink field={item.link} className="text-center">
+                <PrismicNextLink field={item.link} className="text-center" onClick={handleScroll}>
                   {item.label}
                 </PrismicNextLink>
               </h4>
@@ -160,9 +160,13 @@ const Navbar = ({ settings }: NavbarProps) => {
         <span className="sr-only">Synthetix Home Page</span>
       </a>
 
-      <button className="hidden rounded-full bg-gradient-to-b from-white/[5%] to-white/[15%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] hover:bg-white/[12%] md:block">
+      <Link
+        href={"/#contact-us"}
+        onClick={handleScroll}
+        className="hidden rounded-full bg-gradient-to-b from-white/[5%] to-white/[15%] px-7 py-4 text-base leading-[23.04px] tracking-[-0.16px] text-white outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] hover:bg-white/[12%] md:block"
+      >
         Contact Us
-      </button>
+      </Link>
 
       <a href="/" className="flex w-min items-center justify-center md:hidden">
         <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">
