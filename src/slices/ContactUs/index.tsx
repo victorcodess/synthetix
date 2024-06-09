@@ -54,9 +54,9 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
                 key={asText(item.value)}
                 className="flex w-full flex-col items-start justify-center gap-1"
               >
-                <h4 className="text-[12px] font-medium leading-[17.28px] tracking-[0.72px] opacity-50">
+                <h5 className="text-[12px] font-medium leading-[17.28px] tracking-[0.72px] opacity-50">
                   <PrismicRichText field={item.detail} />
-                </h4>
+                </h5>
                 <p className="cursor-pointer text-[21px] leading-[30.24px] tracking-[-0.21px] transition-all hover:text-[#FF6D00]">
                   <PrismicRichText field={item.value} />
                 </p>

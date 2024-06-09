@@ -84,7 +84,7 @@ const NotFound = () => {
             src={
               "https://images.prismic.io/synthetix/ZmWiqZm069VX1k2p_3d-element-twelve.png?auto=compress%2Cformat&w=800&h=800&fit=max"
             }
-            alt=""
+            alt="3d image"
             width={460}
             height={448}
             className="w-full p-16 md:px-52 xl:!w-[320px] xl:!p-[45px]"
@@ -111,7 +111,7 @@ const NotFound = () => {
             src={
               "https://images.prismic.io/synthetix/ZmWiqJm069VX1k2o_3d-element-thirteen.png?auto=compress%2Cformat&w=800&h=800&fit=max"
             }
-            alt=""
+            alt="3d image"
             width={460}
             height={448}
             className="hidden p-[70px] xl:mt-20 xl:block xl:min-w-[320px]"
@@ -138,7 +138,7 @@ const NotFound = () => {
             src={
               "https://images.prismic.io/synthetix/ZmWiqZm069VX1k2p_3d-element-twelve.png?auto=compress%2Cformat&w=800&h=800&fit=max"
             }
-            alt=""
+            alt="3d image"
             width={460}
             height={448}
             className="hidden xl:block xl:w-[320px] xl:p-[45px]"

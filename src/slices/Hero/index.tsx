@@ -141,7 +141,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           }}
           className="mt-20 w-80 md:mt-28 md:w-96 xl:absolute xl:-left-[100px] xl:bottom-[216px] xl:mt-0 xl:w-72"
         >
-          <PrismicNextImage field={slice.primary.image} className="xl:w-72" />
+          <PrismicNextImage priority field={slice.primary.image} className="xl:w-72" />
         </motion.div>
 
         <motion.div
