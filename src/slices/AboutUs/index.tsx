@@ -42,7 +42,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
         />
       </div>
 
-      <div className="relative mt-20 flex w-full flex-col items-start justify-center gap-12 py-16 sm:flex-row sm:items-center sm:gap-4 sm:py-20">
+      <div className="relative mt-20 flex w-full flex-col items-start justify-center gap-12 py-16 sm:flex-row sm:items-center sm:gap-4 sm:py-20 2xl:max-w-[1440px]">
         <div
           style={{
             background:
@@ -79,7 +79,7 @@ const AboutUs = ({ slice }: AboutUsProps): JSX.Element => {
         ))}
       </div>
 
-      <div className="smd:h-[600px] flex h-[400px] w-full justify-center overflow-hidden rounded-2xl xl:h-[772px]">
+      <div className="flex h-[400px] w-full justify-center overflow-hidden rounded-2xl sm:h-[600px] xl:h-[772px] 2xl:max-w-[1440px]">
         <video
           className="h-[400px] max-w-none rounded-2xl md:h-[600px] xl:h-[772px]"
           autoPlay

@@ -37,10 +37,10 @@ const Navbar = ({ settings }: NavbarProps) => {
           ease: [0.44, 0, 0, 1],
         },
       }}
-      className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16"
+      className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16 2xl:max-w-[1440px]"
     >
       {openNav && (
-        <div className="fixed right-0 top-0 flex h-[100vh] w-full flex-col items-center justify-center md:justify-start bg-[#100000]">
+        <div className="fixed right-0 top-0 flex  min-h-[100vh] w-full flex-col items-center justify-center overflow-hidden bg-[#100000] md:justify-start">
           <div
             style={{
               background:
@@ -59,7 +59,7 @@ const Navbar = ({ settings }: NavbarProps) => {
                 ease: [0.44, 0, 0, 1],
               },
             }}
-            className="md:mt-[120px] flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] lg:mt-[95px] md:h-[567px] md:gap-9 lg:!py-[64px]"
+            className="flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] md:mt-[120px] md:h-[567px] md:gap-9 lg:mt-[95px] lg:!py-[64px]"
           >
             {settings.data.navigation.map((item) => (
               <h4

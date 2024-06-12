@@ -19,19 +19,19 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       id="contact-us"
-      className="relative flex w-full flex-col items-start justify-start overflow-hidden px-[24px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-16"
+      className="relative flex w-full flex-col items-center justify-start overflow-hidden px-[24px] pb-[56px] pt-[112px] text-white md:px-12 md:pt-[144px] xl:px-16"
     >
-      <div className="absolute top-[70px] -z-10 h-[180px] w-[180px] rounded-[120px] bg-[#ff6d00]/[0.25] blur-[50px] sm:top-[90px] sm:h-[240px] sm:w-[240px] md:top-[112px]" />
-
-      <div className="text-gradient w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]">
-        CONTACT US
+      <div className="flex w-full flex-col items-start justify-start 2xl:max-w-[1440px]">
+        <div className="absolute top-[70px] -z-10 h-[180px] w-[180px] rounded-[120px] bg-[#ff6d00]/[0.25] blur-[50px] sm:top-[90px] sm:h-[240px] sm:w-[240px] md:top-[112px]" />
+        <div className="text-gradient w-max rounded-full border border-white/[12%] px-4 py-2.5 text-[12px] leading-[17.28px] tracking-[0.72px]">
+          CONTACT US
+        </div>
+        <h2 className="mt-4 text-left text-[32px] leading-[34.56px] tracking-[-1.12px] sm:w-[400px] md:w-[648px] md:text-balance md:text-[52px] md:leading-[56.16px] xl:text-[56px] xl:leading-[60.48px]">
+          <PrismicRichText field={slice.primary.heading} />
+        </h2>
       </div>
 
-      <h2 className="mt-4 text-left text-[32px] leading-[34.56px] tracking-[-1.12px] sm:w-[400px] md:w-[648px] md:text-balance md:text-[52px] md:leading-[56.16px] xl:text-[56px] xl:leading-[60.48px]">
-        <PrismicRichText field={slice.primary.heading} />
-      </h2>
-
-      <div className="flex w-full flex-col gap-4 xl:flex-row xl:pt-16">
+      <div className="flex w-full flex-col gap-4 xl:flex-row xl:pt-16 2xl:max-w-[1440px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{

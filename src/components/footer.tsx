@@ -13,7 +13,7 @@ const Footer = async () => {
 
   return (
     <footer className="flex w-full flex-col items-center justify-center overflow-hidden px-12 pb-[32px] lg:px-16">
-      <div className="flex w-full flex-col items-center justify-center gap-8 border-y-2 border-white/10 py-12">
+      <div className="flex w-full flex-col items-center justify-center gap-8 border-y-2 border-white/10 py-12 2xl:max-w-[1440px]">
         <Link href="/">
           <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/70">
             <Image
@@ -94,7 +94,7 @@ const Footer = async () => {
           </a>
         </p>
         <p>
-        • Development by
+          • Development by
           <a
             href="https://www.victorwilliams.me"
             target="_blank"

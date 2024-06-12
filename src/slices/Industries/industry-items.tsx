@@ -20,7 +20,7 @@ const IndustryItems = ({
   };
 
   return (
-    <div className="flex w-full items-center justify-center gap-4 xl:mt-[120px]">
+    <div className="flex w-full items-center justify-center gap-4 xl:mt-[120px] 2xl:max-w-[1440px]">
       <div className="w-full xl:flex xl:w-[452px] xl:flex-col xl:items-center xl:justify-center xl:gap-14">
         {slice.items.map((item) => (
           <div

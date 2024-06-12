@@ -11,7 +11,6 @@ import next from "../../public/next.png";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-
 const Carousel = ({
   slice,
 }: {
@@ -28,7 +27,11 @@ const Carousel = ({
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
-    <motion.div ref={targetRef} style={{ opacity, scale }} className="relative w-full">
+    <motion.div
+      ref={targetRef}
+      style={{ opacity, scale }}
+      className="relative w-full 2xl:max-w-[1440px]"
+    >
       <Swiper
         slidesPerView={1}
         centeredSlides={false}
