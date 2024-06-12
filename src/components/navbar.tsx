@@ -6,7 +6,7 @@ import twitter from "@/public/twitter.svg";
 import facebook from "@/public/facebook.svg";
 import { Content } from "@prismicio/client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PrismicNextLink } from "@prismicio/next";
 import Linker, { handleScroll } from "./linker";
 import { AnimatePresence, motion } from "framer-motion";
@@ -17,20 +17,25 @@ type NavbarProps = {
 
 const Navbar = ({ settings }: NavbarProps) => {
   const [openNav, setOpenNav] = useState(false);
+
+  useEffect(() => {
+    if (openNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [openNav]);
+  
   return (
     <motion.nav
       initial={{ opacity: 0 }}
-      whileInView={{
+      animate={{
         opacity: 1,
         transition: {
           duration: 1,
           delay: 1,
           ease: [0.44, 0, 0, 1],
         },
-      }}
-      viewport={{
-        amount: "all",
-        once: true,
       }}
       className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16"
     >
@@ -46,17 +51,13 @@ const Navbar = ({ settings }: NavbarProps) => {
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{
+            animate={{
               opacity: 1,
               y: 0,
               transition: {
                 duration: 1,
                 ease: [0.44, 0, 0, 1],
               },
-            }}
-            viewport={{
-              amount: "all",
-              once: true,
             }}
             className="mt-[120px] flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] md:mt-[95px] md:h-[567px] md:gap-9 md:!py-[64px]"
           >
@@ -66,7 +67,11 @@ const Navbar = ({ settings }: NavbarProps) => {
                 className="text-[28px] leading-[30.24px] tracking-[-0.8px] text-white opacity-50 transition-all hover:opacity-100 md:text-[40px] md:leading-[43.2px]"
                 onClick={() => setOpenNav(false)}
               >
-                <PrismicNextLink field={item.link} className="text-center" onClick={handleScroll}>
+                <PrismicNextLink
+                  field={item.link}
+                  className="text-center"
+                  onClick={handleScroll}
+                >
                   {item.label}
                 </PrismicNextLink>
               </h4>
@@ -75,7 +80,7 @@ const Navbar = ({ settings }: NavbarProps) => {
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{
+            animate={{
               opacity: 1,
               y: 0,
               transition: {
@@ -83,10 +88,6 @@ const Navbar = ({ settings }: NavbarProps) => {
                 delay: 0.1,
                 ease: [0.44, 0, 0, 1],
               },
-            }}
-            viewport={{
-              amount: "all",
-              once: true,
             }}
             className="absolute bottom-[42px] left-0 right-0 mx-auto flex h-[20px] w-max items-center justify-around gap-[30px] md:bottom-[45px] md:gap-[34px]"
           >
