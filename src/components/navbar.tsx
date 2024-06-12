@@ -25,7 +25,7 @@ const Navbar = ({ settings }: NavbarProps) => {
       document.body.style.overflow = "auto";
     }
   }, [openNav]);
-  
+
   return (
     <motion.nav
       initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ const Navbar = ({ settings }: NavbarProps) => {
       className="relative mx-6 flex w-full flex-row-reverse items-center justify-between md:mx-12 md:flex-row lg:mx-16"
     >
       {openNav && (
-        <div className="fixed right-0 top-0 flex h-[100vh] w-full flex-col items-center justify-start bg-[#100000]">
+        <div className="fixed right-0 top-0 flex h-[100vh] w-full flex-col items-center justify-center md:justify-start bg-[#100000]">
           <div
             style={{
               background:
@@ -59,7 +59,7 @@ const Navbar = ({ settings }: NavbarProps) => {
                 ease: [0.44, 0, 0, 1],
               },
             }}
-            className="mt-[120px] flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] md:mt-[95px] md:h-[567px] md:gap-9 md:!py-[64px]"
+            className="md:mt-[120px] flex h-[517px] w-full flex-col items-center justify-center gap-8 py-[88px] lg:mt-[95px] md:h-[567px] md:gap-9 lg:!py-[64px]"
           >
             {settings.data.navigation.map((item) => (
               <h4
