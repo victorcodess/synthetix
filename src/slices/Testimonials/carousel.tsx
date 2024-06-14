@@ -34,6 +34,7 @@ const Carousel = ({
     >
       <Swiper
         slidesPerView={1}
+        speed={1000}
         centeredSlides={false}
         onSwiper={(swiper) => {
           reviewSwiperRef.current = swiper;
