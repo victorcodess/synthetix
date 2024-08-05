@@ -82,7 +82,7 @@ const Footer = async () => {
         </div>
       </div>
 
-      {/* <div className="mt-[17px] w-full items-center justify-center gap-[5px] text-center text-xs font-medium uppercase leading-[17.28px] tracking-[0.72px] text-[#828180] opacity-100 sm:flex">
+      <div className="mt-[17px] w-full items-center justify-center gap-[5px] text-center text-xs font-medium uppercase leading-[17.28px] tracking-[0.72px] text-[#828180] opacity-100 sm:flex">
         <p>
           Design by
           <a
@@ -104,7 +104,7 @@ const Footer = async () => {
           </a>
           — @2024, SYNTHETIX
         </p>
-      </div> */}
+      </div>
     </footer>
   );
 };
